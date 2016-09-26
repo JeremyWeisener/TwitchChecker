@@ -1,0 +1,86 @@
+<html>
+
+<head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.9/css/weather-icons.css">
+    <script src="stuff.js"></script>
+</head>
+
+
+<body ng-app="searchWikipedia" 
+      ng-controller="wikiSearch">
+    
+    
+    
+    
+    <!-- Search Box -->
+    <div class="row">
+        <div id="searchContainer" class="col-xs-4 col-xs-offset-4">
+            <form ng-submit="sendQuery($scope.query)" id="searchForm" class="row">
+                <input type="text" 
+                       name="search" 
+                       id="search" 
+                       class="search col-xs-10" 
+                       ng-model="query"
+                       placeholder="Search Wikipedia">
+                
+                <button id="searchButton" class="col-xs-1" type="submit" ng-click="sendQuery($scope.query)" ><i class="fa fa-search"></i></button>
+                <a id="searchRandom" class="col-xs-1" href="https://en.wikipedia.org/wiki/Special:Random" target="_blank"><i class="fa fa-random"></i></a>
+            </form>
+                        <!-- Random Entry button -->
+             <!--   <a id="random" href="https://en.wikipedia.org/wiki/Special:Random"
+                   target="_blank">
+                    Click here for a random article.
+                </a>    -->
+        </div>
+    </div>
+    
+    <!--    play with this to see if it works so that enter/clicking the icon works
+
+        <input ng-model="..." onkeypress="if (event.which==13) document.getElementById('button').click()"/>
+        <button id="button" ng-click="doSomething()">Done</button>
+
+
+            possible alternative that makes icon a submit button so enter will also submit
+
+        <form ng-submit="chat.sendMessage()">
+            <input type="text" />
+            <button type="submit">
+        </form>
+
+
+            a 3rd possibility is to add an ng-keypress and the only function inside is behind an if (charCode==13){}
+
+            //code goes here
+
+    -->
+    
+    
+    
+    
+    
+    
+    
+    <!-- div to open and display - search results -->
+        <div class="row" ng-show="entries">
+    
+        <div class="col-xs-8 col-xs-offset-2" id="resultsContainer">
+            
+            <a class="resultLink" ng-repeat="entry in entries" href="http://en.wikipedia.org/?curid={{entry.pageid}}"><div class="col-xs-12 results">
+                <h3>{{entry.title}}</h3>
+                <p>{{entry.extract}}</p>
+                </div></a>
+            </a>
+        </div>
+        
+    </div>
+    
+    
+<body>
+    
+
+</html>
