@@ -1,0 +1,50 @@
+body{
+    background:#B3E5FC;
+}
+#searchContainer{
+    text-align:center;
+}
+#searchButton{
+    border:none;
+    background:none;
+    font-size:18px;
+    
+}
+#search{
+    border:none;
+    /*border-bottom: solid grey 2px;*/
+    background:#B3E5FC;
+    color:black;
+}
+#searchForm{
+    border: solid #FF7043 3px;
+    padding:.5em;
+    border-radius: 3em;
+}
+#search:focus{
+    outline-width:0;
+}
+.results{
+    background: #FFFFFF;
+    margin-bottom:1em;
+    color:black;
+    padding-left:14px;
+    box-shadow: 0px 2px 2px 0px #616161;
+}
+.results:hover{
+    border-left: solid #FF7043 7px;
+    padding-left:7px;
+}
+#searchrandom{    
+    background:none;
+    border:none;
+    color:inherit;
+    font-size:18px;
+    margin-top:.1em;
+    
+}
+#resultsContainer{
+    background:#039BE5;
+    padding: 2.5em;
+    box-shadow: 0px 0px 3px 2px #616161;
+}
